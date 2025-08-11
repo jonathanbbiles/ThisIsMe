@@ -63,4 +63,3 @@ EXPO_PUBLIC_ALPACA_SECRET_KEY=
 * Crypto symbol format is **pair style**, e.g. `BTC/USD`, `ETH/USD`. (Alpaca docs example shows `BTC/USD`.)
 * We place BUY with `notional` then poll until filled, then LIMIT SELL for the filled qty.
 
-```

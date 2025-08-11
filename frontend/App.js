@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+
 import { View, Text, ScrollView, TouchableOpacity, Switch, RefreshControl, Alert, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
