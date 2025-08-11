@@ -61,5 +61,7 @@ EXPO_PUBLIC_ALPACA_SECRET_KEY=
 
 * LIVE crypto orders evaluate **non_marginable_buying_power** (cash-only). Fund the account and ensure crypto trading is enabled.
 * Crypto symbol format is **pair style**, e.g. `BTC/USD`, `ETH/USD`. (Alpaca docs example shows `BTC/USD`.)
+wmdaa8-codex/create-bullish-or-bust-crypto-trading-app
 * We place BUY with `notional` then poll until filled, then LIMIT SELL for the filled qty.
-
+* We place BUY with `notional` then poll until filled, then LIMIT SELL for the filled qty.
+main
