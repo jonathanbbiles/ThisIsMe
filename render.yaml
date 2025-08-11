@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: thisisme-backend
+    env: node
+    rootDir: backend
+    buildCommand: "npm ci"
+    startCommand: "npm start"
+    healthCheckPath: "/ping"
