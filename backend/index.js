@@ -26,6 +26,7 @@ const HEADERS = {
   'Content-Type': 'application/json'
 };
 
+
 app.get('/ping', (_req, res) => res.json({ status: 'ok' }));
 app.get('/api/ping', (_req, res) => res.json({ ok: true, ts: Date.now() }));
 
@@ -77,4 +78,8 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`API up on ${PORT}`);
   console.log(`Using Alpaca base URL: ${ALPACA_BASE_URL}`);
   console.log(`Using Alpaca data URL: ${ALPACA_DATA_URL}`);
+
+app.listen(PORT, () => {
+  console.log(`Backend listening on http://0.0.0.0:${PORT}`);
+  console.log(`Using Alpaca base URL: ${ALPACA_BASE_URL}`);
 });
