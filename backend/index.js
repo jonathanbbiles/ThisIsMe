@@ -8,7 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+wmdaa8-codex/create-bullish-or-bust-crypto-trading-app
+const port = process.env.PORT || 3000;
 const PORT = process.env.PORT || 3000;
+main
 
 const ALPACA_BASE_URL = process.env.ALPACA_BASE_URL || 'https://api.alpaca.markets/v2';
 const ALPACA_DATA_URL = process.env.ALPACA_DATA_URL || 'https://data.alpaca.markets/v2';
@@ -26,7 +29,8 @@ const HEADERS = {
   'Content-Type': 'application/json'
 };
 
-
+wmdaa8-codex/create-bullish-or-bust-crypto-trading-app
+main
 app.get('/ping', (_req, res) => res.json({ status: 'ok' }));
 app.get('/api/ping', (_req, res) => res.json({ ok: true, ts: Date.now() }));
 
@@ -74,6 +78,11 @@ app.post('/api/trade', async (req, res) => {
   }
 });
 
+wmdaa8-codex/create-bullish-or-bust-crypto-trading-app
+app.listen(port, () => {
+  console.log(`API up on ${port}`);
+  console.log(`Using Alpaca base URL: ${ALPACA_BASE_URL}`);
+  console.log(`Using Alpaca data URL: ${ALPACA_DATA_URL}`);
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`API up on ${PORT}`);
   console.log(`Using Alpaca base URL: ${ALPACA_BASE_URL}`);
@@ -82,4 +91,5 @@ app.listen(PORT, '0.0.0.0', () => {
 app.listen(PORT, () => {
   console.log(`Backend listening on http://0.0.0.0:${PORT}`);
   console.log(`Using Alpaca base URL: ${ALPACA_BASE_URL}`);
+main
 });
