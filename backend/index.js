@@ -11,6 +11,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 const ALPACA_BASE_URL = process.env.ALPACA_BASE_URL || 'https://api.alpaca.markets/v2';
+const ALPACA_DATA_URL = process.env.ALPACA_DATA_URL || 'https://data.alpaca.markets/v2';
 const API_KEY = process.env.ALPACA_API_KEY;
 const SECRET_KEY = process.env.ALPACA_SECRET_KEY;
 
@@ -25,6 +26,8 @@ const HEADERS = {
   'Content-Type': 'application/json'
 };
 
+
+app.get('/ping', (_req, res) => res.json({ status: 'ok' }));
 app.get('/api/ping', (_req, res) => res.json({ ok: true, ts: Date.now() }));
 
 app.get('/api/account', async (_req, res) => {
@@ -70,6 +73,11 @@ app.post('/api/trade', async (req, res) => {
     res.status(500).json({ error: 'Trade failed', detail: err?.response?.data || err.message });
   }
 });
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`API up on ${PORT}`);
+  console.log(`Using Alpaca base URL: ${ALPACA_BASE_URL}`);
+  console.log(`Using Alpaca data URL: ${ALPACA_DATA_URL}`);
 
 app.listen(PORT, () => {
   console.log(`Backend listening on http://0.0.0.0:${PORT}`);
